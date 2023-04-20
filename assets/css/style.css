@@ -37,3 +37,12 @@
       cursor: pointer;
       border: none;
   }
+  h1 {
+      font-size: 70px;
+  }
+
+  p {
+      font-size: 20px;
+      text-align: center;
+      padding-top: 20px;
+  }
