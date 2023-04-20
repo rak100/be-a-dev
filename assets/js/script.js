@@ -60,3 +60,32 @@ var questions = [
     answer: 2,
   },
 ];
+
+// Timer variables
+var secondsLeft = 60;
+var questionNr = 0;
+var totalScore = 0;
+var questionCount = 1;
+
+function gameOver() {
+  quiz.classList.add("hidden");
+  submitResult.classList.remove("hidden");
+
+  score.textContent = "Your final score is : " + totalScore;
+}
+
+function setTimer() {
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timerLeft.textContent = secondsLeft + " s";
+    if (secondsLeft <= 0) {
+      clearInterval(timerInterval);
+      gameOver();
+    } else if (questionCount >= questions.length + 1) {
+      timerLeft.innerHTML = "0";
+      clearInterval(timerInterval);
+      gameOver();
+    }
+  }, 1000);
+}
+// create func to start quiz
