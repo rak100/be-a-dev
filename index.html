@@ -16,6 +16,29 @@
         <div>Time: <span id="timercount">0</span></div>
     </div>
 
+    <div class="home_page" id="home_page">
+        <h1>BASIC CODING QUIZ</h1>
+        <p>
+            How well do you know coding?<br />
+            Try the answer the following question within the given time frame.
+            <br>
+            Wrong answers will result in reducing time by 10 seconds
+        </p>
+        <button class="btn" id="start_btn">START</button>
+    </div>
+
+    <div id="quiz" class="quiz hidden">
+        <h2 class="questions"></h2>
+        <ul>
+            <li class ="options btn" id="ans_1" value="1">Answer 1</li>
+            <li class ="options btn" id="ans_2" value="2">Answer 2</li>
+            <li class ="options btn" id="ans_3" value="3">Answer 3</li>
+            <li class ="options btn" id="ans_4" value="4">Answer 4</li>
+            
+        </ul>
+        <div id="right_wrong"></div>
+    </div>
+
 
    
     <script src="./assets/js/script.js"></script>
