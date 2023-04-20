@@ -88,4 +88,22 @@ function setTimer() {
     }
   }, 1000);
 }
+
 // create func to start quiz
+function startQuiz() {
+  homePage.classList.add("hidden");
+  quiz.classList.remove("hidden");
+
+  setTimer();
+  showQuestion(questionNr);
+}
+
+function showQuestion(n) {
+  quizQuestion.textContent = questions[n].question;
+  ans_1.textContent = questions[n].choices[0];
+  ans_2.textContent = questions[n].choices[1];
+  ans_3.textContent = questions[n].choices[2];
+  ans_4.textContent = questions[n].choices[3];
+  questionNr = n;
+}
+// create func to check for right ans 
