@@ -89,7 +89,7 @@ function setTimer() {
   }, 1000);
 }
 
-// create func to start quiz
+// function to start quiz
 function startQuiz() {
   homePage.classList.add("hidden");
   quiz.classList.remove("hidden");
@@ -106,4 +106,39 @@ function showQuestion(n) {
   ans_4.textContent = questions[n].choices[3];
   questionNr = n;
 }
-// create func to check for right ans 
+//  function to check answer
+function checkAnswer(e) {
+  e.preventDefault();
+  rightWrong.style.display = "block";
+  setTimeout(function () {
+    rightWrong.style.display = "none";
+  }, 1000);
+
+  if (questions[questionNr].answer == e.target.value) {
+    rightWrong.textContent = "Correct!";
+    totalScore = secondsLeft;
+  } else {
+    secondsLeft = secondsLeft - 10;
+    totalScore = secondsLeft;
+
+    rightWrong.textContent = "Wrong!";
+  }
+
+  if (questionNr < questions.length - 1) {
+    showQuestion(questionNr + 1);
+  } else {
+    gameOver();
+  }
+  questionCount++;
+}
+// function to store user score in local storage
+function storeScore(e) {
+  e.preventDefault();
+
+  var userInfo = {
+    user: initial.value,
+    score: totalScore,
+  };
+  newInfo.push(userInfo);
+  localStorage.setItem("newInfo", JSON.stringify(newInfo));
+}
