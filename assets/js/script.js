@@ -26,3 +26,37 @@ var highScoreElm = document.querySelector("#highscores");
 
 var timerLeft = document.getElementById("timer_count");
 var timeElm = document.getElementsByClassName("timer_count");
+
+// Quiz Questions
+var questions = [
+  {
+    question: "What does HTML stands for?",
+    choices: [
+      "1. Hyper text markup Linguistics",
+      "2. Hyper text markup language",
+      "3. High trade marketing logistics",
+      "4. Hyper tracing market",
+    ],
+    answer: 2,
+  },
+  {
+    question: "What does Cascading style sheet stands for?",
+    choices: ["1. CSS", "2. CGS", "3. GSC", "4. SCS"],
+    answer: 1,
+  },
+  {
+    question: "What coding language provides logic to a webpage?",
+    choices: ["1. PHP", "2. PYTHON", "3. HTML", "4. JAVASCRIPT"],
+    answer: 4,
+  },
+  {
+    question: "Where is REACT used?",
+    choices: ["1. Frontend", "2. Backend", "3. Server side", "4. Api"],
+    answer: 1,
+  },
+  {
+    question: "What is a popular database?",
+    choices: ["1. HTML", "2. MONGODB", "3. GITHUB", "4. VSC"],
+    answer: 2,
+  },
+];
