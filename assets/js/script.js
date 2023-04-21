@@ -1,5 +1,4 @@
 // Variables
-
 var newInfo = JSON.parse(localStorage.getItem("newInfo")) || [];
 var homePage = document.querySelector("#home_page");
 var startBtn = document.querySelector("#start_btn");
@@ -106,6 +105,7 @@ function showQuestion(n) {
   ans_4.textContent = questions[n].choices[3];
   questionNr = n;
 }
+
 //  function to check answer
 function checkAnswer(e) {
   e.preventDefault();
@@ -131,6 +131,7 @@ function checkAnswer(e) {
   }
   questionCount++;
 }
+
 // function to store user score in local storage
 function storeScore(e) {
   e.preventDefault();
@@ -142,3 +143,11 @@ function storeScore(e) {
   newInfo.push(userInfo);
   localStorage.setItem("newInfo", JSON.stringify(newInfo));
 }
+
+optionsElem.forEach(function (e) {
+  e.addEventListener("click", checkAnswer);
+});
+
+startBtn.addEventListener("click", startQuiz);
+
+submitBtn.addEventListener("click", storeScore);
